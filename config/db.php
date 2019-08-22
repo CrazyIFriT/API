@@ -2,8 +2,8 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=localhost;dbname=balancer',
-    'username' => 'root',
+    'dsn' => getenv('DATABASE_URL') || 'mysql:host=localhost;dbname=balancer',
+    'username' => getenv('DATABASE_URL') ? null : 'root',
     'password' => '',
     'charset' => 'utf8',
 
