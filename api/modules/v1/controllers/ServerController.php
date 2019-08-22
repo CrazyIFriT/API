@@ -21,7 +21,7 @@ class ServerController extends ActiveController
 
     public function actionView($id){
         $id_service = Service::findOne($id);
-        return ['url' => (Service::findOne($id_service)->getServers()->orderBy(['rand()' => SORT_DESC])->one())['URL']];
+        return ['url' => (Service::findOne($id_service)->getServers()->orderBy(['random()' => SORT_DESC])->one())['URL']];
     }
 
 }
